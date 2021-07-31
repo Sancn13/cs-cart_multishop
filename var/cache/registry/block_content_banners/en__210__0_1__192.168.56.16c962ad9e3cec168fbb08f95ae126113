@@ -1,0 +1,48 @@
+a:2:{s:4:"data";a:2:{s:10:"javascript";s:601:"<script type="text/javascript">
+(function(_, $) {
+    $.ceEvent('on', 'ce.commoninit', function(context) {
+        var slider = context.find('#banner_slider_325');
+        if (slider.length) {
+            slider.owlCarousel({
+                direction: 'ltr',
+                items: 1,
+                singleItem : true,
+                slideSpeed: 400,
+                autoPlay: '3000',
+                stopOnHover: true,
+                                                    pagination: true
+                                                            });
+        }
+    });
+}(Tygh, Tygh.$));
+</script>";s:7:"content";s:2326:"                    
+    <div id="banner_slider_325" class="banners owl-carousel">
+                    <div class="ty-banner__image-item">
+                                    <a class="banner__link" href="http://192.168.56.1/cscmultiShop/gift-certificates/" >                        <img class="ty-pict  ty-banner__image   cm-image" id="det_img_666957564"  src="http://192.168.56.1/cscmultiShop/images/promo/1/gift_certificate.png"  alt="" title=""/>
+
+
+                    </a>                            </div>
+                    <div class="ty-banner__image-item">
+                                    <a class="banner__link" href="http://192.168.56.1/cscmultiShop/acme-corporation-join-our-loyalty-program-to-get-special-prices/" >                        <img class="ty-pict  ty-banner__image   cm-image" id="det_img_770070800"  src="http://192.168.56.1/cscmultiShop/images/promo/8/acme.jpg"  alt="" title=""/>
+
+
+                    </a>                            </div>
+                    <div class="ty-banner__image-item">
+                                    <a class="banner__link" href="http://192.168.56.1/cscmultiShop/contacts/" >                        <img class="ty-pict  ty-banner__image   cm-image" id="det_img_1243699107"  src="http://192.168.56.1/cscmultiShop/images/promo/1/banner_en_pickup_ok56-7h.png"  alt="" title=""/>
+
+
+                    </a>                            </div>
+                    <div class="ty-banner__image-item">
+                                    <a class="banner__link" href="http://192.168.56.1/cscmultiShop/become-our-vendor-with-no-transaction-fee/" >                        <img class="ty-pict  ty-banner__image   cm-image" id="det_img_1493888676"  src="http://192.168.56.1/cscmultiShop/images/promo/8/bronze.jpg"  alt="" title=""/>
+
+
+                    </a>                            </div>
+                    <div class="ty-banner__image-item">
+                                    <a class="banner__link" href="acme-corp/" >                        <img class="ty-pict  ty-banner__image   cm-image" id="det_img_1198975408"  src="http://192.168.56.1/cscmultiShop/images/promo/8/banner_acme_mobile.jpg"  alt="" title=""/>
+
+
+                    </a>                            </div>
+            </div>
+
+<!-- Inline script moved to the bottom of the page -->
+            ";}s:6:"expiry";i:0;}

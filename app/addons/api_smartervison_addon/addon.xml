@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<addon scheme="2.0">
+	<id>api_smartervison_addon</id>
+	<name>Api cscart for mobile app smartervision</name>
+	<description>Advanced Add-on</description>
+	<version>1.0</version>
+	<priority>100500</priority>
+	<status>active</status>
+	<queries>
+        <item for="install">DROP TABLE IF EXISTS ?:address_deliveries;</item>
+		<item for="install">DROP TABLE IF EXISTS ?:address_delivery_orders;</item>
+		<item for="install">
+            CREATE TABLE `?:address_deliveries` (
+				`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+				`description` Text DEFAULT NULL,
+				`address` VARCHAR(100) NOT NULL,
+				`latitude` VARCHAR(50),
+				`longitude` VARCHAR(50),
+				`is_default` tinyint(1) DEFAULT 1,
+				`user_id` int(11) DEFAULT 0,
+				`created_at` timestamp,
+				`updated_at` timestamp,
+				PRIMARY KEY (`id`)
+			) Engine=MyISAM DEFAULT CHARSET UTF8;
+		</item>
+		<item for="install">
+            CREATE TABLE `?:address_delivery_orders` (
+				`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+				`order_id` int(11) DEFAULT 0,
+				`address_id` int(11) DEFAULT 0,
+				`driver_id` int(11) DEFAULT 0,
+				`created_at` timestamp,
+				`updated_at` timestamp,
+				PRIMARY KEY (`id`)
+			) Engine=MyISAM DEFAULT CHARSET UTF8;
+		</item>
+		<item for="install">
+			INSERT INTO ?:profile_fields(field_name,profile_show,profile_required,checkout_show,checkout_required,partner_show,partner_required,storefront_show,field_type,profile_type,position,is_default,section,matching_id,class,wrapper_class,autocomplete_type) 
+								  VALUES ('is_driver' ,'Y','N','N','N','N','N','Y','C','U','90','N','C','0','','',''),
+								  		 ('p_avatar'  ,'Y','N','N','N','N','N','Y','F','U','70','N','C','0','','',''),
+								  		 ('b_bio'     ,'Y','N','N','N','N','N','Y','T','U','80','N','C','0','','','');
+		</item>
+		<item for="install">
+			INSERT INTO cscart_profile_field_descriptions(object_id,description,object_type,lang_code) 
+			SELECT (cscart_profile_fields.field_id),'is_driver','F','en' FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'is_driver'
+		</item>
+		<item for="install">
+			INSERT INTO cscart_profile_field_descriptions(object_id,description,object_type,lang_code) 
+			SELECT (cscart_profile_fields.field_id),'url_avatar','F','en' FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'p_avatar'
+		</item>
+		<item for="install">
+			INSERT INTO cscart_profile_field_descriptions(object_id,description,object_type,lang_code) 
+			SELECT (cscart_profile_fields.field_id),'b_bio','F','en' FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'b_bio'
+		</item>
+		<item for="uninstall">DELETE FROM cscart_profile_fields_data WHERE cscart_profile_fields_data.field_id = (SELECT cscart_profile_fields.field_id FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'is_driver')</item>
+		<item for="uninstall">DELETE FROM cscart_profile_fields_data WHERE cscart_profile_fields_data.field_id = (SELECT cscart_profile_fields.field_id FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'p_avatar')</item>
+		<item for="uninstall">DELETE FROM cscart_profile_fields_data WHERE cscart_profile_fields_data.field_id = (SELECT cscart_profile_fields.field_id FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'b_bio')</item>
+		<item for="uninstall">DELETE FROM cscart_profile_fields_data WHERE cscart_profile_fields_data.field_id = (SELECT cscart_profile_fields.field_id FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'delivery_range')</item>
+		<item for="uninstall">DELETE FROM ?:profile_fields WHERE ?:profile_fields.field_name = 'is_driver' </item>
+		<item for="uninstall">DELETE FROM ?:profile_fields WHERE ?:profile_fields.field_name = 'p_avatar' </item>
+		<item for="uninstall">DELETE FROM ?:profile_fields WHERE ?:profile_fields.field_name = 'b_bio' </item>
+		<item for="uninstall">DELETE FROM ?:profile_fields WHERE ?:profile_fields.field_name = 'delivery_range' </item>
+		<item for="uninstall">DELETE FROM cscart_profile_field_descriptions WHERE cscart_profile_field_descriptions.description = 'is_driver' </item>
+		<item for="uninstall">DELETE FROM cscart_profile_field_descriptions WHERE cscart_profile_field_descriptions.description = 'url_avatar' </item>
+		<item for="uninstall">DELETE FROM cscart_profile_field_descriptions WHERE cscart_profile_field_descriptions.description = 'b_bio' </item>
+		<item for="uninstall">DELETE FROM cscart_profile_field_descriptions WHERE cscart_profile_field_descriptions.description = 'delivery_range' </item>
+		<item for="uninstall">DROP TABLE IF EXISTS ?:address_deliveries;</item>
+		<item for="uninstall">DROP TABLE IF EXISTS ?:address_delivery_orders;</item>
+	</queries>
+</addon>
