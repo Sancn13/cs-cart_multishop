@@ -38,7 +38,24 @@
 			INSERT INTO ?:profile_fields(field_name,profile_show,profile_required,checkout_show,checkout_required,partner_show,partner_required,storefront_show,field_type,profile_type,position,is_default,section,matching_id,class,wrapper_class,autocomplete_type) 
 								  VALUES ('is_driver' ,'Y','N','N','N','N','N','Y','C','U','90','N','C','0','','',''),
 								  		 ('p_avatar'  ,'Y','N','N','N','N','N','Y','F','U','70','N','C','0','','',''),
-								  		 ('b_bio'     ,'Y','N','N','N','N','N','Y','T','U','80','N','C','0','','','');
+								  		 ('b_bio'     ,'Y','N','N','N','N','N','Y','T','U','80','N','C','0','','',''),
+										 ('delivery_range','Y','N','N','N','N','Y','I','S','120','N','C'.'0','','','');
+		</item>
+		<item for="install">
+			INSERT INTO cscart_payments(company_id,usergroup_ids,position,status,template,processor_id,processor_params,a_surcharge,p_surcharge,tax_ids,localization,payment_categpry,country_selection_mode)
+						  VALUES  ('0','0','0','A','views/orders/components/payments/empty.tpl','0','','0.000','5.000','tab1','N');
+		</item>
+		<item for="install">
+			INSERT INTO cscart_payment_descriptions(payment_id,payment,description,instructions,surcharge_title,lang_code) 
+			SELECT MAX(cscart_payments.payment_id),'Cash on delivery','Cash on delivery','','','en' FROM cscart_payments
+		</item>
+		<item for="install">
+			INSERT INTO cscart_payments(company_id,usergroup_ids,position,status,template,processor_id,processor_params,a_surcharge,p_surcharge,tax_ids,localization,payment_categpry,country_selection_mode)
+						  VALUES  ('0','0','0','A','views/orders/components/payments/empty.tpl','0','','0.000','5.000','tab1','N');
+		</item>
+		<item for="install">
+			INSERT INTO cscart_payment_descriptions(payment_id,payment,description,instructions,surcharge_title,lang_code) 
+			SELECT MAX(cscart_payments.payment_id),'Pay on pickup','Pay on pickup','','','en' FROM cscart_payments
 		</item>
 		<item for="install">
 			INSERT INTO cscart_profile_field_descriptions(object_id,description,object_type,lang_code) 
@@ -51,6 +68,10 @@
 		<item for="install">
 			INSERT INTO cscart_profile_field_descriptions(object_id,description,object_type,lang_code) 
 			SELECT (cscart_profile_fields.field_id),'b_bio','F','en' FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'b_bio'
+		</item>
+		<item for="install">
+			INSERT INTO cscart_profile_field_descriptions(object_id,description,object_type,lang_code) 
+			SELECT (cscart_profile_fields.field_id),'delivery_range','F','en' FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'delivery_range'
 		</item>
 		<item for="uninstall">DELETE FROM cscart_profile_fields_data WHERE cscart_profile_fields_data.field_id = (SELECT cscart_profile_fields.field_id FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'is_driver')</item>
 		<item for="uninstall">DELETE FROM cscart_profile_fields_data WHERE cscart_profile_fields_data.field_id = (SELECT cscart_profile_fields.field_id FROM cscart_profile_fields WHERE cscart_profile_fields.field_name = 'p_avatar')</item>

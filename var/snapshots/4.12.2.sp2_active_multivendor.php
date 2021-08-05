@@ -1,5 +1,5 @@
 <?php $snapshot = array (
-  'time' => 1627612096,
+  'time' => 1628042044,
   'files' => 
   array (
     '12a5350b4ec83ef86b6951b308a4cb00' => '/api.php',
@@ -94,7 +94,7 @@
     '2c85630ef1468ff18d4d5e22fa80b292' => '/app/addons/anti_fraud/Tygh/Addons/AntiFraud/MinFraud/Response.php',
     'eb25229a1e806f947f5cb863ad0bc0d1' => '/app/addons/anti_fraud/Tygh/Tests/Unit/Addons/AntiFraud/MinFraud/RequestTest.php',
     '477f63459bfc46b1b820ab108d911387' => '/app/addons/anti_fraud/Tygh/Tests/Unit/Addons/AntiFraud/MinFraud/ResponseTest.php',
-    '3a32bd07728e95ef46eb88ffa1484164' => '/app/addons/api_smartervison_addon/addon.xml',
+    '406ac75ad8dbc99d40ec6bb5bf85109e' => '/app/addons/api_smartervison_addon/addon.xml',
     '72c8281c53999caee4676dab2129e7cc' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/addressMobile.php',
     '78bee38e18e9e38a35926e158fa4d067' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/authTokensApiMobile.php',
     '8174c7736b90c5941d7078018289645e' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/cartMobile.php',
@@ -111,7 +111,7 @@
     '2a6d2c0841073bfba20b1636c1b46c8d' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/productsMobile.php',
     '76d10a971e3976880558944f17c97257' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/reportsMobile.php',
     '9e4ebe810768abe1c96593e213618228' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/searchMobile.php',
-    '70872381f9cdc62a46a9109cb64039ef' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/settingsMobile.php',
+    'e93c53a4ec11fb9011a17a7384b2d5f8' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/settingsMobile.php',
     'f78726c2340750848b3a8b11970b4f9a' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/slide.php',
     'f011e24fe1a1d1a89ff60adf9ca8071e' => '/app/addons/api_smartervison_addon/Tygh/Api/Entities/usersMobile.php',
     '0da337620ce9ce7e5130430f5e284e3a' => '/app/addons/attachments/addon.xml',

@@ -102,6 +102,11 @@ class OrdersMobile extends AEntity
                         array_push($where,"?:shipment_items.shipment_id=?:shipments.shipment_id");
                         array_push($where,"?:shipments.status='S'");
                     }
+                    else {
+                        array_push($from,"?:shipments");
+                        array_push($where,"?:shipment_items.shipment_id=?:shipments.shipment_id");
+                        array_push($where,"?:shipments.status != 'S'");
+                    }
                     $order_by = ' order by ?:orders.order_id DESC';
                     $select = 1;
                 }
